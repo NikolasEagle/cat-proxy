@@ -5,7 +5,7 @@ stages:
 variables:
   IMAGE_TAG: $CI_REGISTRY_IMAGE:$CI_COMMIT_SHORT_SHA
   TAG_ONLY: $CI_COMMIT_SHORT_SHA
-  CHART_REPO: github.com/NikolasEagle/cat-proxy.git
+  CHART_REPO: github.com/NikolasEagle/cat-proxy-helm.git
 
 workflow:
   rules:
