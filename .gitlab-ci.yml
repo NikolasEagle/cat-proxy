@@ -48,7 +48,7 @@ update-helm-chart-task:
     - cd helm-charts/charts/cat-proxy
     - 'sed -i "s|tag:.*|tag\: \"$TAG_ONLY\"|" values.yaml'
     - 'sed -i "s|appVersion:.*|appVersion: \"$TAG_ONLY\"|" Chart.yaml'
-    - awk '/^version:/ {split($2, v, "."); $2 = v[1] "." v[2] "." v[3]+1} 1' Chart.yaml > Chart.yaml.tmp && mv Chart.yaml.tmp Chart.yaml
+    - awk '/^version:/ {split($2, v, "."); $2 = v[1]+1 "." v[2] "." v[3]} 1' Chart.yaml > Chart.yaml.tmp && mv Chart.yaml.tmp Chart.yaml
     - git config user.email "ci@gitlab.com"
     - git config user.name "GitLab CI"
     - git add .
